@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flappybirdd.ControllerRank">
+    <children>
+        <Pane prefHeight="500.0" prefWidth="700.0">
+            <children>
+                <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@image/bg1.jpg" />
+                    </image>
+                </ImageView>
+            <Pane layoutX="97.0" layoutY="80.0" prefHeight="340.0" prefWidth="505.0" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 30;">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="85.0" layoutX="11.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/cup.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/cup2.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="50.0" layoutX="28.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/cup3.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="96.0" layoutY="49.0" prefHeight="45.0" prefWidth="350.0" style="-fx-background-color: Gray; -fx-background-radius: 999;" textAlignment="CENTER" />
+                  <Label layoutX="96.0" layoutY="132.0" prefHeight="45.0" prefWidth="350.0" style="-fx-background-color: Gray; -fx-background-radius: 999;" textAlignment="CENTER" />
+                  <Label layoutX="96.0" layoutY="219.0" prefHeight="45.0" prefWidth="350.0" style="-fx-background-color: Gray; -fx-background-radius: 999;" textAlignment="CENTER" />
+               </children>
+            </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
