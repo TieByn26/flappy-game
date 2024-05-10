@@ -80,13 +80,13 @@ public class ControllerStartGame {
     public void spawnPipe(){
         double heightTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
 
-        pipeTop = new ImageView("C:\\Users\\ADMIN\\IdeaProjects\\FlappyBirdd\\src\\main\\resources\\com\\example\\flappybirdd\\image\\PipeTop.png");
+        pipeTop = new ImageView("C:\\gitc\\DoAnJava_hk2\\src\\main\\resources\\com\\example\\flappybirdd\\image\\PipeTop.png");
         pipeTop.setFitWidth(pipe_with);
         pipeTop.setFitHeight(heightTop);
         pipeTop.setLayoutY(0);
         pipeTop.setLayoutX(700);
 
-        pipeBottom = new ImageView("C:\\Users\\ADMIN\\IdeaProjects\\FlappyBirdd\\src\\main\\resources\\com\\example\\flappybirdd\\image\\PipeBottom.png");
+        pipeBottom = new ImageView("C:\\gitc\\DoAnJava_hk2\\src\\main\\resources\\com\\example\\flappybirdd\\image\\PipeBottom.png");
         pipeBottom.setFitWidth(pipe_with);
         pipeBottom.setFitHeight(gamePane.getHeight() - heightTop - pipe_gap);
         pipeBottom.setLayoutY(heightTop + pipe_gap);
