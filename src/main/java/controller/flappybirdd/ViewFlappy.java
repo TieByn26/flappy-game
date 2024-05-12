@@ -1,4 +1,4 @@
-package com.example.flappybirdd;
+package controller.flappybirdd;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

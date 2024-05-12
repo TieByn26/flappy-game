@@ -4,6 +4,6 @@ module com.example.flappybirdd {
 
     requires org.controlsfx.controls;
 
-    opens com.example.flappybirdd to javafx.fxml;
-    exports com.example.flappybirdd;
+    opens controller.flappybirdd to javafx.fxml;
+    exports controller.flappybirdd;
 }

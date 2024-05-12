@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flappybirdd.ControllerChat">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.flappybirdd.ControllerChat">
    <children>
       <Pane prefHeight="500.0" prefWidth="700.0">
          <children>

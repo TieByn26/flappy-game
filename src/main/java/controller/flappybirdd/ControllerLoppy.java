@@ -1,4 +1,4 @@
-package com.example.flappybirdd;
+package controller.flappybirdd;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
