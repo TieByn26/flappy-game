@@ -28,7 +28,7 @@ public class ControllerForgot {
     }
     private void cancelToLogin(ActionEvent event){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ControllerCapcha.class.getResource("ViewLogin.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ControllerForgot.class.getResource("ViewLogin.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);

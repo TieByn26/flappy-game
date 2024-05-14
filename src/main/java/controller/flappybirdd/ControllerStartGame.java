@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
@@ -27,15 +28,19 @@ public class ControllerStartGame {
     private Button quit;
     @FXML
     private Button replay;
+    @FXML
+    private Label textLabel;
     private ImageView pipeTop;
     private ImageView pipeBottom;
+    private int point = 0;
     private double initial_velocity = 0;
     private static final double gravity = 0.4;
     private static final double jump_v = -6;
     private static final int pipe_with = 100;
     private static final double pipe_gap = 150;
-    private static final double pipe_v = 2;
+    private static final double pipe_v = 3;
     private ArrayList<ImageView> pipes = new ArrayList<>();
+    private ArrayList<ImageView> points = new ArrayList<>();
 
     @FXML
     public void initialize(){
@@ -64,6 +69,7 @@ public class ControllerStartGame {
                     spawnPipe();
                 }
                 movePipe();
+                score();
                 initial_velocity += gravity;
                 BirdImg.setLayoutY(BirdImg.getLayoutY()+initial_velocity);
 
@@ -95,28 +101,41 @@ public class ControllerStartGame {
         gamePane.getChildren().addAll(pipeTop, pipeBottom);
         pipes.add(pipeTop);
         pipes.add(pipeBottom);
+        points.add(pipeTop);
     }
     public void movePipe(){
         ArrayList<ImageView> pipesToRemove = new ArrayList<>();
         for (ImageView pipe : pipes){
             pipe.setTranslateX(pipe.getTranslateX() - pipe_v);
-            if (pipe.getTranslateX() < -900){
+            if (pipe.getTranslateX() < -800){
                 pipesToRemove.add(pipe);
             }
         }
         gamePane.getChildren().removeAll(pipesToRemove);
         pipes.removeAll(pipesToRemove);
     }
+    public void score(){
+        ArrayList<ImageView> pipesToRemove = new ArrayList<>();
+        for (ImageView Point : points){
+            if (Point.getTranslateX() < -650){
+                point = point + 1;
+                String temp = Integer.toString(point);
+                textLabel.setText(temp);
+                pipesToRemove.add(Point);
+            }
+        }
+        points.removeAll(pipesToRemove);
+    }
     public boolean checkCollision() {
         Bounds birdBounds = BirdImg.getBoundsInParent();
-        double shrinkFactor = 10;
+        double shrinkFactor = 7;
         Bounds smallerBirdBounds = new BoundingBox(
                 birdBounds.getMinX() + shrinkFactor,
                 birdBounds.getMinY() + shrinkFactor,
                 birdBounds.getWidth() - 2 * shrinkFactor,
                 birdBounds.getHeight() - 2 * shrinkFactor
         );
-        double pipeShrink = 10;
+        double pipeShrink = 7;
         for (ImageView pipe : pipes) {
             Bounds pipeBounds = pipe.getBoundsInParent();
             Bounds smallerPipeBounds = new BoundingBox(
@@ -133,7 +152,7 @@ public class ControllerStartGame {
     }
     public void quit(ActionEvent event){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ControllerLogin.class.getResource("ViewLoppy.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ControllerStartGame.class.getResource("ViewLoppy.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);
@@ -143,7 +162,7 @@ public class ControllerStartGame {
     }
     public void replay(ActionEvent event){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ControllerLogin.class.getResource("ViewStartGame.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ControllerStartGame.class.getResource("ViewStartGame.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = ((Node) event.getSource()).getScene();
             scene.setRoot(root);

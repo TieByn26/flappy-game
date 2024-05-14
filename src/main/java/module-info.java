@@ -6,4 +6,5 @@ module com.example.flappybirdd {
 
     opens controller.flappybirdd to javafx.fxml;
     exports controller.flappybirdd;
+
 }

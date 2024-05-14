@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class connectServer {
+public class ConnectServer {
     private static String ipServer = "";
     private static int port =8080;
     public static Socket getSocket() {

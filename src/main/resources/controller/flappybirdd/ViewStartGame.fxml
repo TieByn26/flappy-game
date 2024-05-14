@@ -22,11 +22,6 @@
                   <Image url="@image/bird.png" />
                </image>
             </ImageView>
-            <Pane layoutX="292.0" layoutY="6.0" prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: white; -fx-background-radius: 20;">
-               <children>
-                  <Label alignment="CENTER" layoutX="18.0" layoutY="17.0" prefHeight="34.0" prefWidth="50.0" text="1" textAlignment="CENTER" />
-               </children>
-            </Pane>
          </children>
       </Pane>
       <Pane fx:id="gameOver" layoutX="195.0" layoutY="132.0" prefHeight="236.0" prefWidth="293.0" style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-color: Black;" visible="false">
@@ -46,6 +41,15 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
+         </children>
+      </Pane>
+      <Pane prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.rightAnchor="330.0">
+         <children>
+            <Label fx:id="textLabel" alignment="CENTER" layoutX="18.0" layoutY="17.0" prefHeight="34.0" prefWidth="50.0" text="0" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
