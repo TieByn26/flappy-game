@@ -7,11 +7,12 @@ import java.net.Socket;
 
 public class ConnectServer {
     private static String ipServer = "";
-    private static int port =8080;
+    private static int port =5525;
     public static Socket getSocket() {
         Socket socket;
         try {
             socket = new Socket(ipServer, port);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -23,10 +24,11 @@ public class ConnectServer {
         BufferedReader fromServer = null;
         try {
             fromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            fromServer.readLine();
-        }catch (IOException e){
+            System.out.println(fromServer.readLine());
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 }
 

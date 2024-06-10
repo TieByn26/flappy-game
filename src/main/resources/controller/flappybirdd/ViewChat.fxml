@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.flappybirdd.ControllerChat">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="507.0" style="-fx-background-color: rgba(225,225,225,0.9);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="500.0" prefWidth="700.0">
+      <Pane layoutX="37.0" layoutY="364.0" prefHeight="44.0" prefWidth="434.0" style="-fx-border-color: #79CDCD; -fx-background-radius: 999; -fx-border-radius: 999; -fx-border-width: 3; -fx-background-color: white;">
          <children>
-            <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+            <TextField layoutX="63.0" layoutY="3.0" prefHeight="38.0" prefWidth="357.0" style="-fx-background-color: rgba;" />
+            <ImageView fitHeight="38.0" fitWidth="44.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/bg1.jpg" />
+                  <Image url="@../../image/chat.png" />
                </image>
             </ImageView>
-            <Pane layoutX="97.0" layoutY="36.0" prefHeight="428.0" prefWidth="507.0" style="-fx-background-color: rgba(255,255,255,0.7); -fx-background-radius: 30;">
-               <children>
-                  <Pane layoutX="30.0" layoutY="364.0" prefHeight="44.0" prefWidth="434.0" style="-fx-background-color: WHITE; -fx-background-radius: 999;">
-                     <children>
-                        <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: rgba;">
-                           <graphic>
-                              <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/chat.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <TextField layoutX="72.0" layoutY="3.0" prefHeight="38.0" prefWidth="341.0" style="-fx-background-color: rgba;" />
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
          </children>
       </Pane>
    </children>
-</AnchorPane>
+</Pane>

@@ -11,73 +11,72 @@
     <children>
         <Pane prefHeight="500.0" prefWidth="700.0">
             <children>
-                <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true">
                     <image>
-                        <Image url="@image/bg1.jpg" />
+                        <Image url="@../../image/back2.png" />
                     </image>
                 </ImageView>
-                <Button accessibleRole="IMAGE_VIEW" layoutX="279.0" layoutY="229.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="145.0" style="-fx-background-color: rpga;">
+                <Button fx:id="playButton" accessibleRole="IMAGE_VIEW" layoutX="279.0" layoutY="229.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="120.0" style="-fx-background-color: rpga; -fx-background-radius: 18; -fx-border-radius: 18; -fx-border-color: #79CDCD; -fx-border-width: 3;">
                     <font>
                         <Font name="System Bold" size="1.0" />
                     </font>
                <graphic>
                       <ImageView fitHeight="62.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-y: 1.0; -fx-scale-x: 1.0;">
                           <image>
-                              <Image url="@image/buttonPlay.png" />
+                              <Image url="@../../image/buttonPlay.png" />
                           </image>
                       </ImageView>
                </graphic>
                 </Button>
-                <Button graphicTextGap="1.0" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
+                <Button fx:id="rankButton" graphicTextGap="1.0" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
                     <graphic>
                         <ImageView fitHeight="56.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/cup.png" />
+                                <Image url="@../../image/cup.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="14.0" layoutY="200.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
+                <Button fx:id="skinButton" layoutX="14.0" layoutY="200.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/BirdSKin.png" />
+                                <Image url="@../../image/bird.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="21.0" layoutY="274.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
-                    <graphic>
+                <Button fx:id="settingButton" layoutX="21.0" layoutY="274.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
+               <graphic>
                         <ImageView fitHeight="44.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/setting.png" />
+                                <Image url="@../../image/setting.png" />
                             </image>
                         </ImageView>
-                    </graphic>
-                </Button>
-                <Pane layoutX="100.0" layoutY="416.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: ffff; -fx-background-radius: 999;">
+               </graphic></Button>
+                <Pane layoutX="100.0" layoutY="416.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: ffff; -fx-background-radius: 999; -fx-border-radius: 999; -fx-border-color: #79CDCD; -fx-border-width: 3;">
                     <children>
-                        <Button layoutX="14.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: argb;">
+                        <Button fx:id="chatButton" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: argb;">
                             <graphic>
                                 <ImageView fitHeight="35.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@image/chat.png" />
+                                        <Image url="@../../image/chat.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                         </Button>
                     </children>
                 </Pane>
-                <Pane layoutX="102.0" layoutY="14.0" prefHeight="187.0" prefWidth="500.0">
+                <Pane fx:id="introPane" layoutX="102.0" layoutY="14.0" prefHeight="187.0" prefWidth="500.0">
                     <children>
-                        <ImageView fitHeight="156.0" fitWidth="482.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="156.0" fitWidth="482.0" layoutX="20.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/text.png" />
+                                <Image url="@../../image/text.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="102.0" fitWidth="172.0" layoutX="164.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="91.0" fitWidth="121.0" layoutX="182.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/bird.png" />
+                                <Image url="@../../image/bird.png" />
                             </image>
                         </ImageView>
                     </children>

@@ -12,14 +12,14 @@
    <children>
       <Pane fx:id="gamePane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgBackground" fitHeight="500.0" fitWidth="700.0" pickOnBounds="true">
                <image>
-                  <Image url="@image/bg1.jpg" />
+                  <Image url="@../../image/back2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="BirdImg" fitHeight="33.0" fitWidth="70.0" layoutX="115.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BirdImg" fitHeight="42.0" fitWidth="50.0" layoutX="115.0" layoutY="292.0" pickOnBounds="true">
                <image>
-                  <Image url="@image/bird.png" />
+                  <Image url="@../../image/birdSkin2.png" />
                </image>
             </ImageView>
          </children>
@@ -28,7 +28,7 @@
          <children>
             <ImageView fitHeight="275.0" fitWidth="250.0" layoutX="22.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/GameOver.png" />
+                  <Image url="@../../image/GameOver.png" />
                </image>
             </ImageView>
             <Button fx:id="replay" layoutX="161.0" layoutY="168.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="65.0" style="-fx-background-radius: 999; -fx-background-color: #00ffff; -fx-border-radius: 999; -fx-border-color: Green;" text="Replay">
@@ -43,11 +43,11 @@
             </Button>
          </children>
       </Pane>
-      <Pane prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.rightAnchor="330.0">
+      <Pane layoutX="300.0" prefHeight="60.0" prefWidth="73.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: #CD853F; -fx-border-radius: 20;">
          <children>
-            <Label fx:id="textLabel" alignment="CENTER" layoutX="18.0" layoutY="17.0" prefHeight="34.0" prefWidth="50.0" text="0" textAlignment="CENTER">
+            <Label fx:id="textLabel" alignment="CENTER" layoutX="12.0" layoutY="13.0" prefHeight="34.0" prefWidth="50.0" text="0" textAlignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Bradley Hand ITC" size="24.0" />
                </font>
             </Label>
          </children>

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class  ViewFlappy extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ViewFlappy.class.getResource("ViewStartGame.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ViewFlappy.class.getResource("ViewLogin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
         stage.setTitle("Flappy Loppy");
         stage.setScene(scene);

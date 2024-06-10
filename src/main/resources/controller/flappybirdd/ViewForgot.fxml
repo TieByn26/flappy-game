@@ -28,17 +28,17 @@
                 </Label>
                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="180.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@image/gicon.png" />
+                        <Image url="@../../image/gicon.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="104.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@image/fbicon.png" />
+                        <Image url="@../../image/fbicon.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="252.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@image/mailicon.png" />
+                        <Image url="@../../image/mailicon.png" />
                     </image>
                 </ImageView>
             </children>
@@ -47,7 +47,7 @@
             <children>
                 <ImageView fitHeight="540.0" fitWidth="304.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@image/BannerLogin.jpg" />
+                        <Image url="@../../image/BannerLogin.jpg" />
                     </image>
                 </ImageView>
             </children>

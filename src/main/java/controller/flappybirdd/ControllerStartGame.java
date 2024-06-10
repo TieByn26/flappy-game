@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 public class ControllerStartGame {
     @FXML
     private ImageView BirdImg;
+    @FXML
+    private ImageView imgBackground;
     @FXML
     private Pane gamePane;
     @FXML
@@ -44,6 +47,7 @@ public class ControllerStartGame {
 
     @FXML
     public void initialize(){
+        randomBack();
         gamePane.setFocusTraversable(true);
         gamePane.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.SPACE){
@@ -56,13 +60,29 @@ public class ControllerStartGame {
         replay.setOnAction(this::replay);
 
     }
+    public void randomBack(){
+        int ran = (int)(Math.random() * 4) + 1;
+        if (ran == 1){
+            Image image = new Image(getClass().getResource("/image/bg1.jpg").toExternalForm());
+            imgBackground.setImage(image);
+        } else if (ran == 2){
+            Image image = new Image(getClass().getResource("/image/back2.png").toExternalForm());
+            imgBackground.setImage(image);
+        } else if (ran == 3) {
+            Image image = new Image(getClass().getResource("/image/background3.jpg").toExternalForm());
+            imgBackground.setImage(image);
+        } else {
+            Image image = new Image(getClass().getResource("/image/background4.png").toExternalForm());
+            imgBackground.setImage(image);
+        }
+    }
     public void jumpV(){
         gamePane.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.SPACE){
                 initial_velocity = jump_v;
             }
         });
-        AnimationTimer timer = new AnimationTimer() {
+         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 if (!pipes.isEmpty() && (pipes.get(pipes.size() - 1).getTranslateX() < -250)) {
@@ -86,13 +106,13 @@ public class ControllerStartGame {
     public void spawnPipe(){
         double heightTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
 
-        pipeTop = new ImageView("C:\\gitc\\DoAnJava_hk2\\src\\main\\resources\\controller\\flappybirdd\\image\\PipeTop.png");
+        pipeTop = new ImageView(new Image(getClass().getResource("/image/PipeSkin3Top.png").toExternalForm()));
         pipeTop.setFitWidth(pipe_with);
         pipeTop.setFitHeight(heightTop);
         pipeTop.setLayoutY(0);
         pipeTop.setLayoutX(700);
 
-        pipeBottom = new ImageView("C:\\gitc\\DoAnJava_hk2\\src\\main\\resources\\controller\\flappybirdd\\image\\PipeBottom.png");
+        pipeBottom = new ImageView(new Image(getClass().getResource("/image/PipeSkin3Bottom.png").toExternalForm()));
         pipeBottom.setFitWidth(pipe_with);
         pipeBottom.setFitHeight(gamePane.getHeight() - heightTop - pipe_gap);
         pipeBottom.setLayoutY(heightTop + pipe_gap);
@@ -118,7 +138,7 @@ public class ControllerStartGame {
         ArrayList<ImageView> pipesToRemove = new ArrayList<>();
         for (ImageView Point : points){
             if (Point.getTranslateX() < -650){
-                point = point + 1;
+                point++;
                 String temp = Integer.toString(point);
                 textLabel.setText(temp);
                 pipesToRemove.add(Point);
