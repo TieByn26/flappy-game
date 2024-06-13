@@ -1,5 +1,6 @@
 package controller.flappybirdd;
 
+import ObjectGson.GsonForClient.CL_CheckLogin;
 import javafx.animation.AnimationTimer;
 import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
@@ -12,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class ControllerLoppy {
     @FXML
@@ -26,6 +29,10 @@ public class ControllerLoppy {
     private Button chatButton;
     @FXML
     private Pane introPane;
+    @FXML
+    private Pane mainPane;
+    private Pane skinPane;
+    public static CL_CheckLogin cl_checkLogin = ControllerLogin.cl_checkLogin;
 
     @FXML
     public void initialize(){
@@ -36,6 +43,7 @@ public class ControllerLoppy {
         scaleButton(settingButton);
         scaleButton(chatButton);
         playButton.setOnAction(this::playGame);
+        skinButton.setOnAction(event -> changeSkin());
     }
     public void playGame(ActionEvent event){
         try {
@@ -47,8 +55,13 @@ public class ControllerLoppy {
             e.printStackTrace();
         }
     }
-    public void changeSkin(){
-
+    public void changeSkin() {
+        try {
+            skinPane = FXMLLoader.load(getClass().getResource("ViewSkin.fxml"));
+            mainPane.getChildren().add(skinPane);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     public void viewRank(){
 
@@ -69,7 +82,7 @@ public class ControllerLoppy {
         scaleTransition.setAutoReverse(true);
         scaleTransition.play();
     }
-    public void scaleButton(Button button) {
+    public static void scaleButton(Button button) {
         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(200), button);
         scaleUp.setToX(1.1);
         scaleUp.setToY(1.1);
@@ -89,4 +102,11 @@ public class ControllerLoppy {
         });
     }
 
+    public Pane getMainPane() {
+        return mainPane;
+    }
+
+    public void setMainPane(Pane mainPane) {
+        this.mainPane = mainPane;
+    }
 }

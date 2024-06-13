@@ -3,6 +3,7 @@ package ObjectGson.GsonForServer;
 public class SV_Score {
     private int userId;
     private String score;
+    private SV_UserInfor sv_userInfor;
 
     public SV_Score(int userId, String score) {
         this.userId = userId;
@@ -10,6 +11,14 @@ public class SV_Score {
     }
 
     public SV_Score() {
+    }
+
+    public SV_UserInfor getSv_userInfor() {
+        return sv_userInfor;
+    }
+
+    public void setSv_userInfor(SV_UserInfor sv_userInfor) {
+        this.sv_userInfor = sv_userInfor;
     }
 
     public int getUserId() {
@@ -33,6 +42,7 @@ public class SV_Score {
         return "SV_Score{" +
                 "userId=" + userId +
                 ", score='" + score + '\'' +
+                ", sv_userInfor=" + sv_userInfor +
                 '}';
     }
 }

@@ -9,22 +9,17 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.flappybirdd.ControllerSkin">
     <children>
-        <Pane prefHeight="500.0" prefWidth="700.0">
+        <Pane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: rgba;">
             <children>
-                <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true">
-                    <image>
-                        <Image url="@../../image/back2.png" />
-                    </image>
-                </ImageView>
-                <Pane layoutX="66.0" layoutY="50.0" prefHeight="400.0" prefWidth="548.0" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-color: #528B8B;">
+                <Pane layoutX="76.0" layoutY="50.0" prefHeight="400.0" prefWidth="548.0" style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-color: #528B8B;">
                     <children>
                         <Pane layoutX="39.0" layoutY="26.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="bird1Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>
-                                <Button layoutX="9.0" layoutY="7.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="104.0" style="-fx-background-color: #E8E8E8;">
+                                <Button fx:id="exitButton" layoutX="9.0" layoutY="7.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="104.0" style="-fx-background-color: #E8E8E8;">
                                     <graphic>
                                         <ImageView fitHeight="100.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -37,7 +32,7 @@
                         </Pane>
                         <Pane layoutX="209.0" layoutY="26.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="bird2Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>
@@ -50,7 +45,7 @@
                         </Pane>
                         <Pane layoutX="377.0" layoutY="26.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="bird3Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>
@@ -63,7 +58,7 @@
                         </Pane>
                         <Pane layoutX="39.0" layoutY="207.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="pipe1Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>
@@ -76,7 +71,7 @@
                         </Pane>
                         <Pane layoutX="209.0" layoutY="207.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="pipe2Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>
@@ -89,7 +84,7 @@
                         </Pane>
                         <Pane layoutX="377.0" layoutY="207.0" prefHeight="159.0" prefWidth="130.0" style="-fx-background-color: #E8E8E8; -fx-border-color: #8B4513;">
                             <children>
-                                <Button layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
+                                <Button fx:id="pipe3Button" layoutX="39.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: cyan; -fx-background-radius: 999;" text="EQUIP">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font></Button>

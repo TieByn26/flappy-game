@@ -1,5 +1,8 @@
 package controller.flappybirdd;
 
+import ObjectGson.GsonForClient.CL_CheckLogin;
+import ObjectGson.GsonForServer.SV_Score;
+import RequestToServer.PostData.RequestUpdateScore;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,6 +47,7 @@ public class ControllerStartGame {
     private static final double pipe_v = 3;
     private ArrayList<ImageView> pipes = new ArrayList<>();
     private ArrayList<ImageView> points = new ArrayList<>();
+    private CL_CheckLogin cl_checkLogin = ControllerLoppy.cl_checkLogin;
 
     @FXML
     public void initialize(){
@@ -58,6 +62,15 @@ public class ControllerStartGame {
         });
         quit.setOnAction(this::quit);
         replay.setOnAction(this::replay);
+
+    }
+    public void updateScore(){
+        SV_Score sv_score = new SV_Score();
+        sv_score.setUserId(cl_checkLogin.getIdUser());
+        sv_score.setScore(textLabel.getText());
+        RequestUpdateScore.updateScore(sv_score);
+    }
+    public void getSkin(){
 
     }
     public void randomBack(){
@@ -97,6 +110,7 @@ public class ControllerStartGame {
                 {
                     this.stop();
                     gameOver.setVisible(true);
+                    updateScore();
                 }
             }
         };

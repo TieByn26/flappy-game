@@ -52,13 +52,14 @@ public class ControllerLogin {
     private Label labelsu;
     @FXML
     private Label labeltemp;
+    public static CL_CheckLogin cl_checkLogin;
 
     @FXML
     public void initialize(){
         buttonSignUp.setOnAction(actionEvent -> changeToSignUp());
         buttonSignIn.setOnAction(actionEvent -> changeToSignIn());
         buttonforget.setOnAction(this::changeToForget);
-        button3.setOnAction(actionEvent -> signInNow());
+        button3.setOnAction(this::signInNow);
         button4.setOnAction(actionEvent -> signUpNow());
     }
     private void changeToSignUp(){
@@ -137,7 +138,7 @@ public class ControllerLogin {
             e.printStackTrace();
         }
     }
-    private void signInNow(){
+    private void signInNow(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         try {
             if ( textfield.getText() == null || textfield.getText().trim().isEmpty()
@@ -147,12 +148,16 @@ public class ControllerLogin {
                 alert.showAndWait();
             } else {
                 CL_Login cl_login = new CL_Login(textfield.getText(),textpassword1.getText());
-                CL_CheckLogin clCheckLogin = RequestLoginn.requestLogin(cl_login);
-                if (clCheckLogin.getCheck()) {
-                    alert.setTitle("Information Dialog");
-                    alert.setContentText("Ok đúng mật khẩu");
-                    alert.showAndWait();
-//                    ChangedSceneToHome.ChangeScene(event,"/Controller/BaseProject/ViewHome.fxml","Home",svCheckLogin.getIdUser());
+                cl_checkLogin = RequestLoginn.requestLogin(cl_login);
+                if (cl_checkLogin.getCheck()) {
+                    try{
+                        FXMLLoader fxmlLoader = new FXMLLoader(ControllerLogin.class.getResource("ViewLoppy.fxml"));
+                        Parent root = fxmlLoader.load();
+                        Scene scene = ((Node) event.getSource()).getScene();
+                        scene.setRoot(root);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 } else {
                     alert.setTitle("Information Dialog");
                     alert.setContentText("Sai tài khoản hoặc mật khẩu");
