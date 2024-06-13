@@ -1,7 +1,10 @@
 package controller.flappybirdd;
 
 import ObjectGson.GsonForClient.CL_CheckLogin;
+import ObjectGson.GsonForServer.SV_GetSkin;
 import ObjectGson.GsonForServer.SV_Score;
+import ObjectGson.GsonForServer.SV_SkinOfUser;
+import RequestToServer.GetData.GetSkinOfUser;
 import RequestToServer.PostData.RequestUpdateScore;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
@@ -49,8 +52,13 @@ public class ControllerStartGame {
     private ArrayList<ImageView> points = new ArrayList<>();
     private CL_CheckLogin cl_checkLogin = ControllerLoppy.cl_checkLogin;
 
+    private SV_GetSkin sv_getSkin;
+    private String pipesTop;
+    private String pipesBottom;
+
     @FXML
     public void initialize(){
+        getSkin();
         randomBack();
         gamePane.setFocusTraversable(true);
         gamePane.setOnKeyPressed(event -> {
@@ -71,7 +79,12 @@ public class ControllerStartGame {
         RequestUpdateScore.updateScore(sv_score);
     }
     public void getSkin(){
-
+        sv_getSkin = GetSkinOfUser.getSKinOfUser(cl_checkLogin);
+        Image image = new Image(getClass().getResource(sv_getSkin.getSkinBird()).toExternalForm());
+        BirdImg.setImage(image);
+        String[] pipes = sv_getSkin.getSkinPipe().split(",");
+        pipesTop = pipes[0];
+        pipesBottom = pipes[1];
     }
     public void randomBack(){
         int ran = (int)(Math.random() * 4) + 1;
@@ -120,13 +133,13 @@ public class ControllerStartGame {
     public void spawnPipe(){
         double heightTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
 
-        pipeTop = new ImageView(new Image(getClass().getResource("/image/PipeSkin3Top.png").toExternalForm()));
+        pipeTop = new ImageView(new Image(getClass().getResource(pipesTop).toExternalForm()));
         pipeTop.setFitWidth(pipe_with);
         pipeTop.setFitHeight(heightTop);
         pipeTop.setLayoutY(0);
         pipeTop.setLayoutX(700);
 
-        pipeBottom = new ImageView(new Image(getClass().getResource("/image/PipeSkin3Bottom.png").toExternalForm()));
+        pipeBottom = new ImageView(new Image(getClass().getResource(pipesBottom).toExternalForm()));
         pipeBottom.setFitWidth(pipe_with);
         pipeBottom.setFitHeight(gamePane.getHeight() - heightTop - pipe_gap);
         pipeBottom.setLayoutY(heightTop + pipe_gap);
