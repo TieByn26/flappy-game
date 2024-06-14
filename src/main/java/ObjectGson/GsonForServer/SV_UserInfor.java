@@ -6,15 +6,14 @@ public class SV_UserInfor {
     private int userId;
     private String username;
     private int idSkin;
-    private Set<SV_Score> sv_scores;
+
+    public SV_UserInfor() {
+    }
 
     public SV_UserInfor(int userId, String username, int idSkin) {
         this.userId = userId;
         this.username = username;
         this.idSkin = idSkin;
-    }
-
-    public SV_UserInfor() {
     }
 
     public int getUserId() {
@@ -47,7 +46,6 @@ public class SV_UserInfor {
                 "userId=" + userId +
                 ", username='" + username + '\'' +
                 ", idSkin=" + idSkin +
-                ", sv_scores=" + sv_scores +
                 '}';
     }
 }

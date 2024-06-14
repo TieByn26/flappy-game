@@ -20,13 +20,13 @@
                     <font>
                         <Font name="System Bold" size="1.0" />
                     </font>
-               <graphic>
-                      <ImageView fitHeight="62.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-y: 1.0; -fx-scale-x: 1.0;">
-                          <image>
-                              <Image url="@../../image/buttonPlay.png" />
-                          </image>
-                      </ImageView>
-               </graphic>
+                    <graphic>
+                        <ImageView fitHeight="62.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-y: 1.0; -fx-scale-x: 1.0;">
+                            <image>
+                                <Image url="@../../image/buttonPlay.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
                 </Button>
                 <Button fx:id="rankButton" graphicTextGap="1.0" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
                     <graphic>
@@ -47,14 +47,14 @@
                     </graphic>
                 </Button>
                 <Button fx:id="settingButton" layoutX="21.0" layoutY="274.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="61.0" style="-fx-background-color: arbg;">
-               <graphic>
+                    <graphic>
                         <ImageView fitHeight="44.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../image/setting.png" />
                             </image>
                         </ImageView>
-               </graphic></Button>
-                <Pane layoutX="100.0" layoutY="416.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: ffff; -fx-background-radius: 999; -fx-border-radius: 999; -fx-border-color: #79CDCD; -fx-border-width: 3;">
+                    </graphic></Button>
+                <Pane fx:id="chatPane" layoutX="100.0" layoutY="416.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: ffff; -fx-background-radius: 999; -fx-border-radius: 999; -fx-border-color: #79CDCD; -fx-border-width: 3;">
                     <children>
                         <Button fx:id="chatButton" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: argb;">
                             <graphic>

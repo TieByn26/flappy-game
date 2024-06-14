@@ -31,7 +31,13 @@ public class ControllerLoppy {
     private Pane introPane;
     @FXML
     private Pane mainPane;
+    @FXML
+    private Pane chatPane;
     public static CL_CheckLogin cl_checkLogin = ControllerLogin.cl_checkLogin;
+
+    public static void kk(){
+        System.out.println(cl_checkLogin);
+    }
 
     @FXML
     public void initialize(){
@@ -42,6 +48,7 @@ public class ControllerLoppy {
         scaleButton(settingButton);
         scaleButton(chatButton);
         playButton.setOnAction(this::playGame);
+        chatButton.setOnAction(event -> chatGlobal());
         skinButton.setOnAction(event -> changeSkin());
         rankButton.setOnAction(event -> viewRank());
     }
@@ -55,6 +62,15 @@ public class ControllerLoppy {
             e.printStackTrace();
         }
     }
+    public void chatGlobal(){
+        try {
+            Pane chat = FXMLLoader.load(getClass().getResource("ViewChat.fxml"));
+            mainPane.getChildren().add(chat);;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        chatPane.setVisible(false);
+    }
     public void changeSkin() {
         try {
             Pane skinPane = FXMLLoader.load(getClass().getResource("ViewSkin.fxml"));
@@ -62,6 +78,7 @@ public class ControllerLoppy {
         }catch (Exception e){
             e.printStackTrace();
         }
+        chatPane.setVisible(false);
     }
     public void viewRank(){
         try {
@@ -70,9 +87,7 @@ public class ControllerLoppy {
         } catch (Exception e){
             e.printStackTrace();
         }
-    }
-    public void chatGloble(){
-
+        chatPane.setVisible(false);
     }
     public void setting(){
 
@@ -107,11 +122,4 @@ public class ControllerLoppy {
         });
     }
 
-    public Pane getMainPane() {
-        return mainPane;
-    }
-
-    public void setMainPane(Pane mainPane) {
-        this.mainPane = mainPane;
-    }
 }

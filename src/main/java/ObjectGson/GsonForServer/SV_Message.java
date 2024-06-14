@@ -1,10 +1,12 @@
 package ObjectGson.GsonForServer;
 
 public class SV_Message {
+    private int idMess;
     private int userId;
     private String content;
 
-    public SV_Message(int userId, String content) {
+    public SV_Message(int idMess, int userId, String content) {
+        this.idMess = idMess;
         this.userId = userId;
         this.content = content;
     }
@@ -28,10 +30,19 @@ public class SV_Message {
         this.content = content;
     }
 
+    public int getIdMess() {
+        return idMess;
+    }
+
+    public void setIdMess(int idMess) {
+        this.idMess = idMess;
+    }
+
     @Override
     public String toString() {
         return "SV_Message{" +
-                "userId=" + userId +
+                "idMess=" + idMess +
+                ", userId=" + userId +
                 ", content='" + content + '\'' +
                 '}';
     }

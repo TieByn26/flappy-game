@@ -70,6 +70,8 @@ public class ControllerStartGame {
         });
         quit.setOnAction(this::quit);
         replay.setOnAction(this::replay);
+        ControllerLoppy.scaleButton(quit);
+        ControllerLoppy.scaleButton(replay);
 
     }
     public void updateScore(){
@@ -108,7 +110,7 @@ public class ControllerStartGame {
                 initial_velocity = jump_v;
             }
         });
-         AnimationTimer timer = new AnimationTimer() {
+        AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
                 if (!pipes.isEmpty() && (pipes.get(pipes.size() - 1).getTranslateX() < -250)) {

@@ -41,6 +41,7 @@ public class ControllerRank {
     public void initialize(){
         setDataOnScreen();
         exitButton.setOnAction(this::closeRank);
+        ControllerLoppy.scaleButton(exitButton);
     }
     public void closeRank(ActionEvent event){
         try {
