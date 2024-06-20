@@ -31,6 +31,7 @@ public class ControllerChat {
     @FXML
     private ScrollPane scrollPane;
     private Boolean check = true;
+    private boolean useScroll = false;
     public static SV_Message sv_message1;
 
     @FXML
@@ -68,13 +69,14 @@ public class ControllerChat {
                                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewMessage.fxml"));
                                     Parent fxml = loader.load();
                                     containerMess.getChildren().add(fxml);
-
+                                    scrollPane.layout();
+                                    scrollPane.setVvalue(1.0);
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         });
-                        Thread.sleep(2000);
+                        Thread.sleep(1000);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -87,6 +89,7 @@ public class ControllerChat {
         thread.setDaemon(true);
         thread.start();
     }
+
     public void sendMessage(ActionEvent event){
         Button src = (Button) event.getSource();
         if (src == sendButton){

@@ -45,7 +45,7 @@ public class ControllerStartGame {
     private double initial_velocity = 0;
     private static final double gravity = 0.4;
     private static final double jump_v = -6;
-    private static final int pipe_with = 100;
+    private static final int pipe_width = 100;
     private static final double pipe_gap = 150;
     private static final double pipe_v = 3;
     private ArrayList<ImageView> pipes = new ArrayList<>();
@@ -132,26 +132,50 @@ public class ControllerStartGame {
         timer.start();
         gamePane.requestFocus();
     }
-    public void spawnPipe(){
-        double heightTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
+//    public void spawnPipe(){
+//        double heightTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
+//
+//        pipeTop = new ImageView(new Image(getClass().getResource(pipesTop).toExternalForm()));
+//        pipeTop.setFitWidth(pipe_width);
+//        pipeTop.setFitHeight(heightTop);
+//        pipeTop.setLayoutY(0);
+//        pipeTop.setLayoutX(700);
+//
+//        pipeBottom = new ImageView(new Image(getClass().getResource(pipesBottom).toExternalForm()));
+//        pipeBottom.setFitWidth(pipe_width);
+//        pipeBottom.setFitHeight(gamePane.getHeight() - heightTop - pipe_gap);
+//        pipeBottom.setLayoutY(heightTop + pipe_gap);
+//        pipeBottom.setLayoutX(700);
+//
+//        gamePane.getChildren().addAll(pipeTop, pipeBottom);
+//        pipes.add(pipeTop);
+//        pipes.add(pipeBottom);
+//        points.add(pipeTop);
+//    }
+    public void spawnPipe() {
+        double pipeHeight = 300;
+
+        double layoutYTop = 60 + Math.random() * (gamePane.getHeight() - pipe_gap - 100);
 
         pipeTop = new ImageView(new Image(getClass().getResource(pipesTop).toExternalForm()));
-        pipeTop.setFitWidth(pipe_with);
-        pipeTop.setFitHeight(heightTop);
-        pipeTop.setLayoutY(0);
+        pipeTop.setFitWidth(pipe_width);
+        pipeTop.setFitHeight(pipeHeight);
+        pipeTop.setLayoutY(layoutYTop - pipeHeight);
         pipeTop.setLayoutX(700);
 
         pipeBottom = new ImageView(new Image(getClass().getResource(pipesBottom).toExternalForm()));
-        pipeBottom.setFitWidth(pipe_with);
-        pipeBottom.setFitHeight(gamePane.getHeight() - heightTop - pipe_gap);
-        pipeBottom.setLayoutY(heightTop + pipe_gap);
+        pipeBottom.setFitWidth(pipe_width);
+        pipeBottom.setFitHeight(pipeHeight);
+        pipeBottom.setLayoutY(layoutYTop + pipe_gap);
         pipeBottom.setLayoutX(700);
 
         gamePane.getChildren().addAll(pipeTop, pipeBottom);
+
         pipes.add(pipeTop);
         pipes.add(pipeBottom);
         points.add(pipeTop);
     }
+
     public void movePipe(){
         ArrayList<ImageView> pipesToRemove = new ArrayList<>();
         for (ImageView pipe : pipes){
