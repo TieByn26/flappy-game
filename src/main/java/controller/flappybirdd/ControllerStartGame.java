@@ -1,9 +1,12 @@
 package controller.flappybirdd;
 
 import ObjectGson.GsonForClient.CL_CheckLogin;
+import ObjectGson.GsonForClient.CL_IdUser;
 import ObjectGson.GsonForServer.SV_GetSkin;
+import ObjectGson.GsonForServer.SV_Level;
 import ObjectGson.GsonForServer.SV_Score;
 import ObjectGson.GsonForServer.SV_SkinOfUser;
+import RequestToServer.GetData.GetLevel;
 import RequestToServer.GetData.GetSkinOfUser;
 import RequestToServer.PostData.RequestUpdateScore;
 import javafx.animation.AnimationTimer;
@@ -43,11 +46,11 @@ public class ControllerStartGame {
     private ImageView pipeBottom;
     private int point = 0;
     private double initial_velocity = 0;
-    private static final double gravity = 0.4;
-    private static final double jump_v = -6;
-    private static final int pipe_width = 100;
-    private static final double pipe_gap = 150;
-    private static final double pipe_v = 3;
+    private final double gravity = 0.4;
+    private final double jump_v = -6;
+    private final int pipe_width = 100;
+    private final double pipe_gap = 150;
+    private double pipe_v;
     private ArrayList<ImageView> pipes = new ArrayList<>();
     private ArrayList<ImageView> points = new ArrayList<>();
     private CL_CheckLogin cl_checkLogin = ControllerLoppy.cl_checkLogin;
@@ -58,6 +61,7 @@ public class ControllerStartGame {
 
     @FXML
     public void initialize(){
+        setLevel();
         getSkin();
         randomBack();
         gamePane.setFocusTraversable(true);
@@ -73,6 +77,17 @@ public class ControllerStartGame {
         ControllerLoppy.scaleButton(quit);
         ControllerLoppy.scaleButton(replay);
 
+    }
+    public void setLevel(){
+        CL_IdUser cl_idUser = new CL_IdUser(cl_checkLogin.getIdUser());
+        SV_Level sv_level = GetLevel.getLevel(cl_idUser);
+        if (sv_level.getLevel() == 1) {
+            pipe_v = 2;
+        } else if (sv_level.getLevel() == 2) {
+            pipe_v = 3;
+        } else {
+            pipe_v = 5;
+        }
     }
     public void updateScore(){
         SV_Score sv_score = new SV_Score();

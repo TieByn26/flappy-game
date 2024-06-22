@@ -51,6 +51,7 @@ public class ControllerLoppy {
         chatButton.setOnAction(event -> chatGlobal());
         skinButton.setOnAction(event -> changeSkin());
         rankButton.setOnAction(event -> viewRank());
+        settingButton.setOnAction(event -> setting());
     }
     public void playGame(ActionEvent event){
         try {
@@ -90,7 +91,13 @@ public class ControllerLoppy {
         chatPane.setVisible(false);
     }
     public void setting(){
-
+        try {
+            Pane settingPane = FXMLLoader.load(getClass().getResource("ViewSetting.fxml"));
+            mainPane.getChildren().add(settingPane);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        chatPane.setVisible(false);
     }
     public void zoomIntroPane(){
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(1),introPane);

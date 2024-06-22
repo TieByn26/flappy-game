@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.flappybirdd.ControllerSetting">
    <children>
       <Pane layoutX="158.0" layoutY="82.0" prefHeight="340.0" prefWidth="370.0" style="-fx-background-color: #FDF5E6; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #660000; -fx-border-width: 2;">
          <children>
@@ -23,19 +22,19 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </CheckBox>
-            <Button layoutX="157.0" layoutY="285.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" style="-fx-background-color: rgba;">
+            <Button fx:id="logoutButton" layoutX="157.0" layoutY="285.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="46.0" style="-fx-background-color: rgba;">
                <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="41.0" pickOnBounds="true">
                      <image>
                         <Image url="@../../image/logout.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="100.0" layoutY="55.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" text="Easy" />
-            <Button layoutX="100.0" layoutY="103.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" text="Medium" />
-            <Button layoutX="100.0" layoutY="152.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" text="Hard" />
-            <Button layoutX="131.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: rgba;" text="Level">
+            <Button fx:id="easyButton" layoutX="100.0" layoutY="55.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" style="-fx-background-color: #FFFF33; -fx-border-color: green;" text="Easy" />
+            <Button fx:id="mediumButton" layoutX="100.0" layoutY="103.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" style="-fx-background-color: #33FF99; -fx-border-color: green;" text="Medium" />
+            <Button fx:id="hardButton" layoutX="100.0" layoutY="152.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" style="-fx-background-color: #33FF99; -fx-border-color: green;" text="Hard" />
+            <Button fx:id="exitButton" layoutX="131.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: rgba;" text="Level">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
