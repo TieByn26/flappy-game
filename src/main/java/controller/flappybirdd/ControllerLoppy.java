@@ -1,9 +1,11 @@
 package controller.flappybirdd;
 
 import ObjectGson.GsonForClient.CL_CheckLogin;
-import javafx.animation.AnimationTimer;
+import ObjectGson.GsonForClient.CL_IdUser;
+import ObjectGson.GsonForServer.SV_Sound;
+import RequestToServer.GetData.GetSound;
+import javafx.scene.media.Media;
 import javafx.animation.ScaleTransition;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +14,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class ControllerLoppy {
     @FXML
@@ -35,13 +45,11 @@ public class ControllerLoppy {
     private Pane chatPane;
     public static CL_CheckLogin cl_checkLogin = ControllerLogin.cl_checkLogin;
 
-    public static void kk(){
-        System.out.println(cl_checkLogin);
-    }
 
     @FXML
-    public void initialize(){
+    public void initialize() throws Exception {
         zoomIntroPane();
+        setSound();
         scaleButton(playButton);
         scaleButton(rankButton);
         scaleButton(skinButton);
@@ -127,6 +135,32 @@ public class ControllerLoppy {
             scaleUp.stop();
             scaleDown.playFromStart();
         });
+    }
+    private static Clip clip;
+
+    public void setSound() throws Exception {
+        CL_IdUser cl_idUser = new CL_IdUser(cl_checkLogin.getIdUser());
+        SV_Sound sv_sound = GetSound.getSound(cl_idUser);
+
+        // dung am thanh neu dang ton tai
+        if (clip != null && clip.isOpen()) {
+            clip.stop();
+            clip.close();
+        }
+
+        String soundPath = ControllerLoppy.class.getResource("/Sound/enjoy.wav").toExternalForm();
+        File wavFile = new File(new URI(soundPath));
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(wavFile);
+        clip = AudioSystem.getClip();
+
+        if (sv_sound.getSound() == 1) {
+            clip.open(audioIn);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+            clip.start();
+        } else {
+            clip.stop();
+            clip.close();
+        }
     }
 
 }

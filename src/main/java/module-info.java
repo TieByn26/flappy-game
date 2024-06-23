@@ -4,6 +4,9 @@ module com.example.flappybirdd {
 
     requires org.controlsfx.controls;
     requires com.google.gson;
+    requires javafx.media;
+    requires java.desktop;
+    requires jlayer;
 
     // Mở package ObjectGson.GsonForClient và ObjectGson.GsonForServer cho module com.google.gson
     opens ObjectGson.GsonForClient to com.google.gson;

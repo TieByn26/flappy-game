@@ -97,7 +97,6 @@ public class ControllerChat {
             svMessage.setContent(messInput.getText());
             svMessage.setUserId(ControllerLoppy.cl_checkLogin.getIdUser());
             RequestUpdate.updateMessage(svMessage);
-            ControllerLoppy.kk();
             System.out.println(svMessage);
             messInput.setText("");
         }
