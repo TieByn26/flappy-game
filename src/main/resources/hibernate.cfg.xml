@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Cấu hình kết nối đến cơ sở dữ liệu -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/javacuoiky2</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Cấu hình dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Cấu hình tự động cập nhật schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Hiển thị các câu lệnh SQL ra console -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Cấu hình c3p0 connection pooling -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!-- Cấu hình các lớp được ánh xạ -->
+        <mapping class="server.ObjectGson.GsonForServer.SV_User"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_Score"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_Message"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_SkinOfUser"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_Skin"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_UserInfor"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_Sound"/>
+        <mapping class="server.ObjectGson.GsonForServer.SV_Level"/>
+
+    </session-factory>
+</hibernate-configuration>
